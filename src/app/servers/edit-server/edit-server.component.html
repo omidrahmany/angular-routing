@@ -1,0 +1,20 @@
+<div class="row mt-5">
+  <div class="col-sm-4">
+    <div *ngIf="!isAbleToEdit">
+      <strong>You're not allowed to edit the server!</strong>
+    </div>
+    <div *ngIf="isAbleToEdit">
+      <div class="form-group">
+        <label for="server-name">server name:</label>
+        <input id="server-name" class="form-control" type="text" [(ngModel)]=serverName>
+      </div>
+      <div class="form-group">
+        <label for="server-status">server status:</label>
+        <input [(ngModel)]="serverStatus" class="form-control" id="server-status" type="text">
+      </div>
+      <button class="btn btn-primary mt-3"
+              (click)="onUpdateServer()">update server
+      </button>
+    </div>
+  </div>
+</div>

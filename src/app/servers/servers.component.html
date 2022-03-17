@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="list-group">
+        <a
+          [routerLink]="['/servers',server.id]"
+          [queryParams]="{'isAllowedEdit' : server.id === 3 ? '0' : '1'}"
+          fragment="loading"
+          class="list-group-item"
+          *ngFor="let server of servers">
+        {{server.name}}
+        </a>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
